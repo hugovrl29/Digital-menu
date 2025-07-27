@@ -17,6 +17,7 @@ const categories = [
 const mockProducts = Array.from({ length: 30 }, (_, i) => ({
     id: i,
     name: `Produit ${i + 1}`,
+    description: 'Contient des ingrédients',
     price: (i + 1) * 2,
     image: '/placeholder.jpg',
     category: categories[i % categories.length].name
@@ -104,7 +105,7 @@ function Menu() {
                 style={{
                 overflowX: categoryIndex === null ? 'auto' : 'hidden',
                 overflowY: 'hidden',
-                padding: '6rem 1rem 2rem 1rem',
+                padding: '4.5rem 1rem 2rem 1rem',
                 height: 'calc(100vh - 6rem)',
                 boxSizing: 'border-box',
                 flexGrow: 1,
@@ -118,7 +119,7 @@ function Menu() {
                     gridTemplateRows: 'repeat(2, 1fr)',
                     gridAutoColumns: categoryIndex === null ? '200px' : undefined,
                     gridTemplateColumns: categoryIndex !== null ? 'repeat(auto-fit, minmax(200px, 1fr))' : undefined,
-                    gap: '1.5rem',
+                    gap: '.7rem 1.5rem',
                 }}
                 >
                 {displayedProducts.map((p) => (
