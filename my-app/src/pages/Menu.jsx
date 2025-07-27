@@ -14,13 +14,16 @@ const categories = [
     { name: 'Desserts' },
 ];
 
+const realCategories = categories.slice(1)
+
 const mockProducts = Array.from({ length: 30 }, (_, i) => ({
     id: i,
     name: `Produit ${i + 1}`,
     description: 'Contient des ingrédients',
     price: (i + 1) * 2,
     image: '/placeholder.jpg',
-    category: categories[i % categories.length].name
+    category: realCategories[i % realCategories.length].name,
+    isRecommended: i % 5 === 0
 }));
 
 function Menu() {
@@ -30,7 +33,11 @@ function Menu() {
     const [cart, setCart] = useState([]);
 
     const currentCategory = categoryIndex !== null ? categories[categoryIndex].name : null;
-    const productsInCategory = mockProducts.filter(p => p.category === currentCategory);
+
+    const productsInCategory =
+        currentCategory === 'Recommandation'
+        ? mockProducts.filter(p => p.isRecommended)
+        : mockProducts.filter(p => p.category === currentCategory);
     const paginated = productsInCategory.slice(page * 8, (page + 1) * 8);
 
     const addToCart = (product) => {
