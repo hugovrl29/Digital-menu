@@ -8,11 +8,13 @@ function LanguageSelector() {
   };
 
   return (
-    <div>
+    <div className="centered">
       <h1>Select Language</h1>
-      <button onClick={() => selectLanguage('fr')}>Français</button>
-      <button onClick={() => selectLanguage('nl')}>Nederlands</button>
-      <button onClick={() => selectLanguage('en')}>English</button>
+      <div className="lang-buttons">
+        <button onClick={() => selectLanguage('fr')}>Français</button>
+        <button onClick={() => selectLanguage('nl')}>Nederlands</button>
+        <button onClick={() => selectLanguage('en')}>English</button>
+      </div>
     </div>
   );
 }

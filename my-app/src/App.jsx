@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LanguageSelector from './pages/LanguageSelector';
 import Menu from './pages/Menu';
 import Checkout from './pages/Checkout';
+import './index.css';
 
 function App() {
   return (
