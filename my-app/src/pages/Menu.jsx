@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { loadProductsFromXLSX } from '../utils/loadProducts';
 import TopNavbar from '../components/TopNavbar';
 import ProductCard from '../components/ProductCard';
 import CartPanel from '../components/CartPanel';
 
 const categories = [
     { name: 'Recommandation' },
-    { name: 'Entrées froides' },
-    { name: 'Entrées chaudes' },
+    { name: 'Entrées Froides' },
+    { name: 'Entrées Chaudes' },
     { name: 'Plats' },
     { name: 'Boissons - Soft' },
     { name: 'Boissons - Alcool' },
@@ -16,6 +17,7 @@ const categories = [
 
 const realCategories = categories.slice(1)
 
+/*
 const mockProducts = Array.from({ length: 30 }, (_, i) => ({
     id: i,
     name: `Produit ${i + 1}`,
@@ -24,20 +26,25 @@ const mockProducts = Array.from({ length: 30 }, (_, i) => ({
     image: '/placeholder.jpg',
     category: realCategories[i % realCategories.length].name,
     isRecommended: i % 5 === 0
-}));
+})); */
 
 function Menu() {
     const navigate = useNavigate();
     const [categoryIndex, setCategoryIndex] = useState(null);
-    const [page, setPage] = useState(0);
     const [cart, setCart] = useState([]);
+    const [products, setProducts] = useState([]);
+
+    const [page, setPage] = useState(0);
+    useEffect(() => {
+        loadProductsFromXLSX().then(setProducts);
+    }, []);
 
     const currentCategory = categoryIndex !== null ? categories[categoryIndex].name : null;
 
     const productsInCategory =
         currentCategory === 'Recommandation'
-        ? mockProducts.filter(p => p.isRecommended)
-        : mockProducts.filter(p => p.category === currentCategory);
+        ? products.filter(p => p.isRecommended)
+        : products.filter(p => p.category === currentCategory);
     const paginated = productsInCategory.slice(page * 8, (page + 1) * 8);
 
     const addToCart = (product) => {
@@ -82,7 +89,7 @@ function Menu() {
                 const newIndex = categoryIndex - 1;
                 setCategoryIndex(newIndex);
                 const prevCat = categories[newIndex].name;
-                const count = mockProducts.filter(p => p.category === prevCat).length;
+                const count = products.filter(p => p.category === prevCat).length;
                 setPage(Math.floor((count - 1) / 8));
             }
         } else {
@@ -90,13 +97,15 @@ function Menu() {
         }
     };
 
-    const displayedProducts = categoryIndex === null ? mockProducts : paginated;
+    const displayedProducts = categoryIndex === null ? products : paginated;
   
     const chunkedProducts = [];
   
     for (let i = 0; i < displayedProducts.length; i += 2) {
         chunkedProducts.push(displayedProducts.slice(i, i + 2));
     }
+
+    if (products.length === 0) return <div>Chargement des produits...</div>;
 
     return (
         <div className="menu-horizontal">

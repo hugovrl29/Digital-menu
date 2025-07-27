@@ -20,7 +20,8 @@
     "react-player": "^3.3.1",
     "react-router-dom": "^7.7.1",
     "stripe": "^18.3.0",
-    "tailwindcss": "^4.1.11"
+    "tailwindcss": "^4.1.11",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
