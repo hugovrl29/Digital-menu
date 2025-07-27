@@ -2,7 +2,6 @@
 // You need to run: npm create vite@latest my-app --template react
 // Then replace src/App.jsx with the following code and create the components as described below.
 
-// src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LanguageSelector from './pages/LanguageSelector';
 import Menu from './pages/Menu';
