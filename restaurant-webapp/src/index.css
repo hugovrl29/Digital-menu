@@ -29,8 +29,9 @@ body {
 .menu-horizontal {
   display: flex;
   flex-direction: row;
-  height: 100vh;
-  overflow: hidden;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
   position: relative;
 }
 
@@ -40,23 +41,30 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  right: 300px; /* limite à la gauche du hover */
-  height: 60px; /* ← ajoute une hauteur fixe */
+  right: 300px;
+  height: 60px;
   display: flex;
-  justify-content: center; /* <-- pour centrer le contenu */
-  align-items: center;      /* <-- vertical centering */
-  background-color: #f3f3f3;
+  justify-content: center;
+  align-items: center;
+  background-color: #B87333;
   gap: 1rem;
   overflow-x: auto;
   z-index: 10;
+  padding: 0 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 
 .top-navbar button {
-  padding: 0.5rem 1rem;
+  flex: 1;
+  text-align: center;
+  padding: 0.75rem 0;
+  background: linear-gradient(to bottom, #FFD966, #D88A26);
+  color: #4E342E;
   border: none;
-  background: #ddd;
+  font-weight: bold;
   cursor: pointer;
+  min-width: 0;
 }
 
 .top-navbar button.active {
@@ -68,6 +76,7 @@ body {
 .product-strip {
   flex-grow: 1;
   overflow-x: scroll;
+  padding-bottom: 2rem;
 }
 
 
@@ -93,6 +102,58 @@ body {
   object-fit: cover;
 }
 
+.product-name,
+.product-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  cursor: pointer;
+}
+
+.product-name:hover::after,
+.product-description:hover::after {
+  content: attr(data-fulltext);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  white-space: normal;
+  z-index: 999;
+  width: max-content;
+  max-width: 300px;
+}
+
+.add-button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: medium;
+  color: white;
+  background: linear-gradient(
+    to bottom,
+    #4CAF50 0%,      /* vert très clair en haut */
+    #4CAF50 50%,     /* transition douce au centre */
+    #2e7d32 100%     /* vert foncé en bas */
+  );
+  border: none;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.add-button:hover {
+  transform: scale(1.03);
+}
+
+
+
+
 /* NAVIGATION BUTTONS */
 
 .navigation-buttons {
@@ -108,6 +169,7 @@ body {
 .navigation-buttons button {
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
+  font-weight: bold;
 }
 
 /* CART PANEL (menu-hover-panel) */
@@ -163,8 +225,9 @@ body {
 .call-button {
   width: 100%;
   padding: 1rem;
-  background-color: #ffcc00;
+  background: linear-gradient(to bottom, #ffce00, #e6b800);
   font-size: 1rem;
+  font-weight: bold;
   border: none;
   cursor: pointer;
 }
@@ -172,10 +235,11 @@ body {
 .checkout-button {
   flex-grow: 1;
   padding: 1rem;
-  background-color: #4CAF50;
+  background: linear-gradient(to bottom, #4CAF50, #2e7d32);
   color: white;
   border: none;
   font-size: 1rem;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -195,4 +259,21 @@ body {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateX(20px); }
   to { opacity: 1; transform: translateX(0); }
+}
+
+.lang-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.lang-buttons button {
+  width: 200px;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }

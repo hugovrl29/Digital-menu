@@ -147,8 +147,8 @@ function Menu() {
 
             {categoryIndex !== null && (
                 <div className="navigation-buttons">
-                    <button onClick={prev}>Previous</button>
-                    <button onClick={next}>Next</button>
+                    <button style={{background: 'linear-gradient(to bottom, #d6942e, #8a4d05)' }} onClick={prev}>Précédent</button>
+                    <button style={{background: 'linear-gradient(to bottom, #f3c56b, #c97e16)' }} onClick={next}>Suivant</button>
                 </div>
             )}
 
