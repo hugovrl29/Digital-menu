@@ -22,8 +22,8 @@ body {
   display: flex;
   flex-direction: row;
   height: auto;
-  overflow-x: visible;
-  overflow-y: visible;
+  overflow-x: auto;
+  overflow-y: auto;
   position: relative;
 }
 
