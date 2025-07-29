@@ -36,7 +36,7 @@ Une application web inspirée des systèmes de commande utilisés dans les resta
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/ton-pseudo/restaurant-webapp.git
+git clone https://github.com/hugovrl29/restaurant-webapp.git
 cd restaurant-webapp
 npm install
 npm run dev
