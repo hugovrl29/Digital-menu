@@ -3,7 +3,7 @@ function CartPanel({ cart, onUpdateQuantity, total, onCheckout }) {
       <div className="menu-hover-panel">
         <div className="cart-content">
           <div className="cart-scroll">
-            <h2 className="cart-title" style = {{textAlign: 'center'}}>Panier</h2>
+            <h2 className="cart-title" style = {{textAlign: 'center'}}>Commande table n°1</h2>
             {cart.length === 0 && <p>Aucun produit sélectionné</p>}
             {cart.map((item) => (
               <div key={item.id} className="cart-item">
@@ -12,8 +12,8 @@ function CartPanel({ cart, onUpdateQuantity, total, onCheckout }) {
                   <button onClick={() => onUpdateQuantity(item.id, -1)}>-</button>
                   <span>{item.quantity}</span>
                   <button onClick={() => onUpdateQuantity(item.id, 1)}>+</button>
+                  <div style={{fontWeight: 'bold', marginInline: 'auto'}}>{item.price}€</div>
                 </div>
-                <div className="cart-item-price">{item.price}€</div>
               </div>
             ))}
           </div>
