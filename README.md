@@ -26,7 +26,7 @@ Une application web inspirée des systèmes de commande utilisés dans les resta
 - ⚛️ React 18 + Vite
 - 🧭 React Router
 - 🌐 Prévue : i18next pour l’internationalisation
-- 💨 Prévue : Tailwind CSS pour le style
+- ~~💨 Prévue : Tailwind CSS pour le style~~
 - 💰 Prévue : Stripe (API de paiement)
 - 📷 Prévue : qrcode.react pour la génération de QR code
 - 🎥 Prévue : react-player pour les pubs vidéos
