@@ -308,3 +308,61 @@ body {
   gap: 0.5rem;
   background-color: #e6b800;
 }
+
+/* CHECKOUT CONTAINER */
+
+.checkout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+  justify-content: center;
+}
+
+.checkout-title {
+  font-size: 24px;
+  margin-bottom: 2rem;
+}
+
+.payment-options {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.payment-btn {
+  width: 300px;
+  height: 300px;
+  background: white;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  color: #3a2b1d;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.payment-btn:hover {
+  transform: scale(1.05);
+}
+
+.payment-icon {
+  width: 60%;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.back-btn {
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(to bottom, #ffe066, #e0a800);
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
