@@ -5,10 +5,12 @@ import {
   PaymentRequestButtonElement
 } from '@stripe/react-stripe-js';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function PaymentForm() {
   const stripe = useStripe();
   const elements = useElements();
+  const navigate = useNavigate();
   const [paymentRequest, setPaymentRequest] = useState(null);
   const [canMakePayment, setCanMakePayment] = useState(false);
   const [message, setMessage] = useState('');
@@ -108,7 +110,7 @@ function PaymentForm() {
             cursor: 'pointer',
           }}
         >
-          {loading ? 'Traitement...' : 'Payer par carte'}
+          {loading ? 'Paiement en cours...' : 'Payer par carte'}
         </button>
       </form>
 
