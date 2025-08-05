@@ -18,7 +18,7 @@ function CartPanel({ cart, onUpdateQuantity, total, onCheckout }) {
             ))}
           </div>
           <div className="cart-actions">
-            <button className="call-button">Appeler Serveur</button>
+            <button className="call-button" onClick={() => alert('🔔 Un serveur viendra vous porter assistance dans quelques instants...')}>Appeler Serveur</button>
             <div className="cart-footer">
               <div className="cart-total">Total : {total}€</div>
               <button className="checkout-button" onClick={onCheckout}>Passer la commande</button>
