@@ -22,7 +22,7 @@ function PaymentForm() {
       currency: 'eur',
       total: {
         label: 'Total',
-        amount: 0.01,
+        amount: 1,
       },
       requestPayerName: true,
       requestPayerEmail: true,
