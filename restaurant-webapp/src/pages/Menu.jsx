@@ -14,10 +14,10 @@ const categories = [
     { name: 'Boissons - Alcool' },
     { name: 'Desserts' },
 ];
-
+/*
 const realCategories = categories.slice(1)
 
-/*
+
 const mockProducts = Array.from({ length: 30 }, (_, i) => ({
     id: i,
     name: `Produit ${i + 1}`,
