@@ -7,7 +7,7 @@ import {
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-function PaymentForm() {
+function PaymentForm( {total} ) {
   const stripe = useStripe();
   const elements = useElements();
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ function PaymentForm() {
       currency: 'eur',
       total: {
         label: 'Total',
-        amount: 1,
+        amount: Math.round(total * 100),
       },
       requestPayerName: true,
       requestPayerEmail: true,

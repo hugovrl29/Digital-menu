@@ -1,4 +1,8 @@
-function CartPanel({ cart, onUpdateQuantity, total, onCheckout }) {
+import { useNavigate } from "react-router-dom";
+
+function CartPanel({ cart, onUpdateQuantity, total}) {
+    const navigate = useNavigate();
+
     return (
       <div className="menu-hover-panel">
         <div className="cart-content">
@@ -21,7 +25,7 @@ function CartPanel({ cart, onUpdateQuantity, total, onCheckout }) {
             <button className="call-button" onClick={() => alert('🔔 Un serveur viendra vous porter assistance dans quelques instants...')}>Appeler Serveur</button>
             <div className="cart-footer">
               <div className="cart-total">Total : {total}€</div>
-              <button className="checkout-button" onClick={onCheckout}>Passer la commande</button>
+              <button className="checkout-button" onClick={() => navigate('/stripe', {state:{total}} )}>Passer la commande</button>
             </div>
           </div>
         </div>
