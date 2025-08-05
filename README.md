@@ -15,7 +15,7 @@ Une application web inspirée des systèmes de commande utilisés dans les resta
   - Desserts
   - Boissons
 - 🛒 Panier avec bouton de commande et appel serveur
-- 💳 Paiement en ligne avec Stripe (à intégrer)
+- 💳 Paiement en ligne avec Stripe
 - 💵 Paiement en espèces avec génération de QR code (à intégrer)
 - 📺 Affichage de publicités (images ou vidéos) sur la page d’accueil (à venir)
 
@@ -25,9 +25,9 @@ Une application web inspirée des systèmes de commande utilisés dans les resta
 
 - ⚛️ React 18 + Vite
 - 🧭 React Router
+- 💰 Stripe (API de paiement)
 - 🌐 Prévue : i18next pour l’internationalisation
 - ~~💨 Prévue : Tailwind CSS pour le style~~
-- 💰 Prévue : Stripe (API de paiement)
 - 📷 Prévue : qrcode.react pour la génération de QR code
 - 🎥 Prévue : react-player pour les pubs vidéos
 
