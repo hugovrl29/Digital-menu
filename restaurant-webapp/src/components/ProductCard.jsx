@@ -1,5 +1,3 @@
-// src/components/ProductCard.jsx
-
 function ProductCard({ product, onAdd }) {
   return (
     <div className="product-card">

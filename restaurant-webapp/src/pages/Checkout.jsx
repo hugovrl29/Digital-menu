@@ -10,7 +10,7 @@ function Checkout() {
       <h1 className="checkout-title">Choisir méthode de paiement</h1>
 
       <div className="payment-options">
-        <button className="payment-btn" onClick={() => alert('Stripe flow soon...')}>
+        <button className="payment-btn" onClick={() => navigate('/stripe')}>
           <img src={cardIcon} alt="Carte bancaire" className="payment-icon"/>
           <span>Carte bancaire</span>
         </button>
