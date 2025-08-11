@@ -25,7 +25,7 @@ function CartPanel({ cart, onUpdateQuantity, total}) {
             <button className="call-button" onClick={() => alert('🔔 Un serveur viendra vous porter assistance dans quelques instants...')}>Appeler Serveur</button>
             <div className="cart-footer">
               <div className="cart-total">Total : {total}€</div>
-              <button className="checkout-button" onClick={() => navigate('/stripe', {state:{total}} )}>Passer la commande</button>
+              <button className="checkout-button" onClick={() => navigate('/checkout', {state:{total}} )}>Passer la commande</button>
             </div>
           </div>
         </div>
