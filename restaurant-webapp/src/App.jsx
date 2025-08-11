@@ -8,6 +8,7 @@ import Menu from './pages/Menu';
 import Checkout from './pages/Checkout';
 import StripePayment from './pages/StripePayment';
 import ThankYou from './pages/ThankYou';
+import ScreensaverOverlay from './components/ScreenSaverOverlay';
 import './index.css';
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
         <Route path="/stripe" element={<StripePayment />} />
         <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
+      <ScreensaverOverlay
+        idleMs={120000} // 2 minutes
+        youtubeLiveUrl="https://www.youtube.com/embed/l8PMl7tUDIE?si=CHFM5yKIvmd_Bh_l"
+      />
     </Router>
   );
 }
